@@ -1,6 +1,6 @@
 package com.example.backend.infrastructure.database.mapper
 
-import com.example.backend.infrastructure.database.record.CustomerRecord
+import com.example.backend.infrastructure.database.record.UserRecord
 import org.apache.ibatis.annotations.DeleteProvider
 import org.apache.ibatis.annotations.Insert
 import org.apache.ibatis.annotations.InsertProvider
@@ -19,7 +19,7 @@ import org.mybatis.dynamic.sql.update.render.UpdateStatementProvider
 import org.mybatis.dynamic.sql.util.SqlProviderAdapter
 
 @Mapper
-interface CustomerMapper {
+interface UserMapper {
     @SelectProvider(type=SqlProviderAdapter::class, method="select")
     fun count(selectStatement: SelectStatementProvider): Long
 
@@ -27,32 +27,32 @@ interface CustomerMapper {
     fun delete(deleteStatement: DeleteStatementProvider): Int
 
     @InsertProvider(type=SqlProviderAdapter::class, method="insert")
-    @Options(useGeneratedKeys=true,keyProperty="record.customerId")
-    fun insert(insertStatement: InsertStatementProvider<CustomerRecord>): Int
+    @Options(useGeneratedKeys=true,keyProperty="record.id")
+    fun insert(insertStatement: InsertStatementProvider<UserRecord>): Int
 
     @Insert(
         "\${insertStatement}"
     )
-    @Options(useGeneratedKeys=true,keyProperty="records.customerId")
-    fun insertMultiple(@Param("insertStatement") insertStatement: String, @Param("records") records: List<CustomerRecord>): Int
+    @Options(useGeneratedKeys=true,keyProperty="records.id")
+    fun insertMultiple(@Param("insertStatement") insertStatement: String, @Param("records") records: List<UserRecord>): Int
 
     @SelectProvider(type=SqlProviderAdapter::class, method="select")
-    @Results(id="CustomerRecordResult", value = [
-        Result(column="customer_id", property="customerId", jdbcType=JdbcType.BIGINT, id=true),
-        Result(column="first_name", property="firstName", jdbcType=JdbcType.VARCHAR),
-        Result(column="last_name", property="lastName", jdbcType=JdbcType.VARCHAR),
-        Result(column="tenant_name", property="tenantName", jdbcType=JdbcType.VARCHAR)
+    @Results(id="UserRecordResult", value = [
+        Result(column="id", property="id", jdbcType=JdbcType.BIGINT, id=true),
+        Result(column="name", property="name", jdbcType=JdbcType.VARCHAR),
+        Result(column="age", property="age", jdbcType=JdbcType.BIGINT),
+        Result(column="profile", property="profile", jdbcType=JdbcType.VARCHAR)
     ])
-    fun selectOne(selectStatement: SelectStatementProvider): CustomerRecord?
+    fun selectOne(selectStatement: SelectStatementProvider): UserRecord?
 
     @SelectProvider(type=SqlProviderAdapter::class, method="select")
-    @Results(id="CustomerRecordResult", value = [
-        Result(column="customer_id", property="customerId", jdbcType=JdbcType.BIGINT, id=true),
-        Result(column="first_name", property="firstName", jdbcType=JdbcType.VARCHAR),
-        Result(column="last_name", property="lastName", jdbcType=JdbcType.VARCHAR),
-        Result(column="tenant_name", property="tenantName", jdbcType=JdbcType.VARCHAR)
+    @Results(id="UserRecordResult", value = [
+        Result(column="id", property="id", jdbcType=JdbcType.BIGINT, id=true),
+        Result(column="name", property="name", jdbcType=JdbcType.VARCHAR),
+        Result(column="age", property="age", jdbcType=JdbcType.BIGINT),
+        Result(column="profile", property="profile", jdbcType=JdbcType.VARCHAR)
     ])
-    fun selectMany(selectStatement: SelectStatementProvider): List<CustomerRecord>
+    fun selectMany(selectStatement: SelectStatementProvider): List<UserRecord>
 
     @UpdateProvider(type=SqlProviderAdapter::class, method="update")
     fun update(updateStatement: UpdateStatementProvider): Int

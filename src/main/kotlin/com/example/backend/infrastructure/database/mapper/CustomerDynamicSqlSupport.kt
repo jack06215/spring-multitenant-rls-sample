@@ -4,8 +4,8 @@ import java.sql.JDBCType
 import org.mybatis.dynamic.sql.SqlTable
 
 object CustomerDynamicSqlSupport {
-    object Customer : SqlTable("customer") {
-        val customerId = column<Int>("customer_id", JDBCType.INTEGER)
+    object Customer : SqlTable("sample.customer") {
+        val customerId = column<Long>("customer_id", JDBCType.BIGINT)
 
         val firstName = column<String>("first_name", JDBCType.VARCHAR)
 

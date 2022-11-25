@@ -1,13 +1,12 @@
 package com.example.backend
 
 import com.example.backend.datasource.TenantAwareHikariDataSource
+import javax.sql.DataSource
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.springframework.context.annotation.Bean
 import org.springframework.scheduling.annotation.EnableAsync
 import org.springframework.transaction.annotation.EnableTransactionManagement
-import org.springframework.context.annotation.Bean
-
-import javax.sql.DataSource;
 
 @SpringBootApplication
 @EnableAsync

@@ -17,7 +17,7 @@ fun CustomerMapper.count(completer: CountCompleter) =
 fun CustomerMapper.delete(completer: DeleteCompleter) =
     deleteFrom(this::delete, Customer, completer)
 
-fun CustomerMapper.deleteByPrimaryKey(customerId_: Int) =
+fun CustomerMapper.deleteByPrimaryKey(customerId_: Long) =
     delete {
         where(customerId, isEqualTo(customerId_))
     }
@@ -60,7 +60,7 @@ fun CustomerMapper.select(completer: SelectCompleter) =
 fun CustomerMapper.selectDistinct(completer: SelectCompleter) =
     selectDistinct(this::selectMany, columnList, Customer, completer)
 
-fun CustomerMapper.selectByPrimaryKey(customerId_: Int) =
+fun CustomerMapper.selectByPrimaryKey(customerId_: Long) =
     selectOne {
         where(customerId, isEqualTo(customerId_))
     }
