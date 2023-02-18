@@ -2,9 +2,6 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD
     MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-  <!-- mysql-connector-javaのパスは各自の環境に合わせて変更 -->
-  <classPathEntry
-    location="C:\\Users\\jack0\\AppData\\Roaming\\DBeaverData\\drivers\\maven\\maven-central\\org.postgresql\\postgresql-42.2.5.jar" />
   <!-- SampleDB.sample database -->
   <context id="PostgreSQLTables" targetRuntime="MyBatis3Kotlin">
     <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin" />
@@ -14,55 +11,25 @@
     </commentGenerator>
     <jdbcConnection
       driverClass="org.postgresql.Driver"
-      connectionURL="jdbc:postgresql://127.0.0.1:5433/sampledb"
+      connectionURL="jdbc:postgresql://127.0.0.1:5434/example_rls"
       userId="postgres"
-      password="password">
+      password="jack19910621">
       <property name="nullCatalogMeansCurrent" value="true" />
     </jdbcConnection>
     <javaTypeResolver>
       <property name="useJSR310Types" value="true" />
     </javaTypeResolver>
     <javaModelGenerator
-      targetPackage="com.example.backend.infrastructure.database.record"
+      targetPackage="com.example.backend.infrastructure.database.generated.record"
       targetProject="src/main/kotlin"></javaModelGenerator>
     <javaClientGenerator
-      targetPackage="com.example.backend.infrastructure.database.mapper"
+      targetPackage="com.example.backend.infrastructure.database.generated.mapper"
       targetProject="src/main/kotlin"></javaClientGenerator>
     <table schema="sample" tableName="customer" domainObjectName="Customer" enableCountByExample="false"
       enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
       selectByExampleQueryId="false">
       <generatedKey column="customer_id" sqlStatement="JDBC" />
       <columnOverride column="customer_id" jdbcType="BIGINT" javaType="java.lang.Long" />
-    </table>
-  </context>
-
-  <context id="PostgreSQLTables2" targetRuntime="MyBatis3Kotlin">
-    <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin" />
-    <commentGenerator>
-      <property name="suppressDate" value="true" />
-      <property name="suppressAllComments" value="true" />
-    </commentGenerator>
-    <jdbcConnection
-      driverClass="org.postgresql.Driver"
-      connectionURL="jdbc:postgresql://127.0.0.1:5433/postgres_for_recordings"
-      userId="postgres"
-      password="password">
-      <property name="nullCatalogMeansCurrent" value="true" />
-    </jdbcConnection>
-    <javaTypeResolver>
-      <property name="useJSR310Types" value="true" />
-    </javaTypeResolver>
-    <javaModelGenerator
-      targetPackage="com.example.backend.infrastructure.database.record"
-      targetProject="src/main/kotlin"></javaModelGenerator>
-    <javaClientGenerator
-      targetPackage="com.example.backend.infrastructure.database.mapper"
-      targetProject="src/main/kotlin"></javaClientGenerator>
-    <table schema="public" tableName="user" domainObjectName="User" enableCountByExample="false"
-      enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-      selectByExampleQueryId="false">
-      <generatedKey column="id" sqlStatement="JDBC" />
-      <columnOverride column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
     </table>
   </context>
 </generatorConfiguration>

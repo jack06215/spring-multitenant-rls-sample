@@ -1,4 +1,4 @@
-package com.example.backend.infrastructure.database.record
+package com.example.backend.infrastructure.database.generated.record
 
 data class CustomerRecord(
     var customerId: Long? = null,

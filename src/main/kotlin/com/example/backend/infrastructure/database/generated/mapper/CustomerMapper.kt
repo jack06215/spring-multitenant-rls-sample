@@ -1,6 +1,6 @@
-package com.example.backend.infrastructure.database.mapper
+package com.example.backend.infrastructure.database.generated.mapper
 
-import com.example.backend.infrastructure.database.record.CustomerRecord
+import com.example.backend.infrastructure.database.generated.record.CustomerRecord
 import org.apache.ibatis.annotations.DeleteProvider
 import org.apache.ibatis.annotations.Insert
 import org.apache.ibatis.annotations.InsertProvider

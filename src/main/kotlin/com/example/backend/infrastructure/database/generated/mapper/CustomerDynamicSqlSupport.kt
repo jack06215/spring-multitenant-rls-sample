@@ -1,4 +1,4 @@
-package com.example.backend.infrastructure.database.mapper
+package com.example.backend.infrastructure.database.generated.mapper
 
 import java.sql.JDBCType
 import org.mybatis.dynamic.sql.SqlTable

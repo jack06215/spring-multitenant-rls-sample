@@ -1,11 +1,11 @@
-package com.example.backend.infrastructure.database.mapper
+package com.example.backend.infrastructure.database.generated.mapper
 
-import com.example.backend.infrastructure.database.mapper.CustomerDynamicSqlSupport.Customer
-import com.example.backend.infrastructure.database.mapper.CustomerDynamicSqlSupport.Customer.customerId
-import com.example.backend.infrastructure.database.mapper.CustomerDynamicSqlSupport.Customer.firstName
-import com.example.backend.infrastructure.database.mapper.CustomerDynamicSqlSupport.Customer.lastName
-import com.example.backend.infrastructure.database.mapper.CustomerDynamicSqlSupport.Customer.tenantName
-import com.example.backend.infrastructure.database.record.CustomerRecord
+import com.example.backend.infrastructure.database.generated.mapper.CustomerDynamicSqlSupport.Customer
+import com.example.backend.infrastructure.database.generated.mapper.CustomerDynamicSqlSupport.Customer.customerId
+import com.example.backend.infrastructure.database.generated.mapper.CustomerDynamicSqlSupport.Customer.firstName
+import com.example.backend.infrastructure.database.generated.mapper.CustomerDynamicSqlSupport.Customer.lastName
+import com.example.backend.infrastructure.database.generated.mapper.CustomerDynamicSqlSupport.Customer.tenantName
+import com.example.backend.infrastructure.database.generated.record.CustomerRecord
 import org.mybatis.dynamic.sql.SqlBuilder.isEqualTo
 import org.mybatis.dynamic.sql.insert.render.MultiRowInsertStatementProvider
 import org.mybatis.dynamic.sql.util.kotlin.*

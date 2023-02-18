@@ -5,5 +5,5 @@ import javax.persistence.Embeddable
 
 @Embeddable
 class Tenant {
-  @Column(name = "tenant_name") var tenantName: String? = null
+    @Column(name = "tenant_name") var tenantName: String? = null
 }
