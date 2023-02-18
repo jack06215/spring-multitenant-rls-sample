@@ -1,7 +1,7 @@
 package com.example.backend.web.controller
 
 import com.example.backend.core.ThreadLocalStorage
-import com.example.backend.model.repositories.ICustomerRepository
+import com.example.backend.repositories.ICustomerRepository
 import com.example.backend.web.converters.Converters
 import com.example.backend.web.model.CustomerDto
 import org.springframework.beans.factory.annotation.Autowired
