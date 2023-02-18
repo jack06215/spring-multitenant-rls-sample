@@ -4,7 +4,6 @@ import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 plugins {
     id("org.springframework.boot") version "2.7.5"
     id("io.spring.dependency-management") version "1.0.15.RELEASE"
-    id("com.thinkimi.gradle.MybatisGenerator") version "2.4"
     id("org.jlleitschuh.gradle.ktlint") version "11.0.0"
     kotlin("jvm") version "1.6.21"
     kotlin("plugin.spring") version "1.6.21"
@@ -37,8 +36,6 @@ ktlint {
 }
 
 dependencies {
-    implementation("org.mybatis.dynamic-sql:mybatis-dynamic-sql:1.4.0")
-    implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
@@ -48,8 +45,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("com.zaxxer:HikariCP:3.4.3")
     implementation("org.postgresql:postgresql:42.2.25")
-    mybatisGenerator("org.mybatis.generator:mybatis-generator-core:1.4.0")
-    mybatisGenerator("org.postgresql:postgresql:42.2.25")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
@@ -62,10 +57,4 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
-}
-
-// 追加
-mybatisGenerator {
-    verbose = true
-    configFile = "$projectDir/src/main/resources/generatorConfig.xml"
 }
