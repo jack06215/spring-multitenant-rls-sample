@@ -25,9 +25,7 @@
     <javaClientGenerator
       targetPackage="com.example.backend.infrastructure.database.generated.mapper"
       targetProject="src/main/kotlin"></javaClientGenerator>
-    <table schema="sample" tableName="customer" domainObjectName="Customer" enableCountByExample="false"
-      enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-      selectByExampleQueryId="false">
+    <table schema="sample" tableName="customer" domainObjectName="Customer">
       <generatedKey column="customer_id" sqlStatement="JDBC" />
       <columnOverride column="customer_id" jdbcType="BIGINT" javaType="java.lang.Long" />
     </table>

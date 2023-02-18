@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper
 import org.apache.ibatis.annotations.Options
 import org.apache.ibatis.annotations.Param
 import org.apache.ibatis.annotations.Result
+import org.apache.ibatis.annotations.ResultMap
 import org.apache.ibatis.annotations.Results
 import org.apache.ibatis.annotations.SelectProvider
 import org.apache.ibatis.annotations.UpdateProvider
@@ -37,12 +38,7 @@ interface CustomerMapper {
     fun insertMultiple(@Param("insertStatement") insertStatement: String, @Param("records") records: List<CustomerRecord>): Int
 
     @SelectProvider(type=SqlProviderAdapter::class, method="select")
-    @Results(id="CustomerRecordResult", value = [
-        Result(column="customer_id", property="customerId", jdbcType=JdbcType.BIGINT, id=true),
-        Result(column="first_name", property="firstName", jdbcType=JdbcType.VARCHAR),
-        Result(column="last_name", property="lastName", jdbcType=JdbcType.VARCHAR),
-        Result(column="tenant_name", property="tenantName", jdbcType=JdbcType.VARCHAR)
-    ])
+    @ResultMap("CustomerRecordResult")
     fun selectOne(selectStatement: SelectStatementProvider): CustomerRecord?
 
     @SelectProvider(type=SqlProviderAdapter::class, method="select")

@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    open-id-view: false     # Get Rid of the OIV warning
+    datasource: postgresql # Prevent JPA from trying to Initialize...
+  show-sql: true # Show the SQL Statements fired by JPA
+  hibernate:
+    ddl-auto: none # Prevent Hibernate from Automatic Changes to the DDL Schema
+    naming:
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl # Set sane Spring Hibernate properties
+  datasource:
+    initialize: false # ... and do not Auto-Detect the Database
+temp:
+  use_jdbc_metadata_defaults: false
