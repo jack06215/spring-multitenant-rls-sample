@@ -1,6 +1,6 @@
-package com.example.backend.web.interceptors
+package com.example.backend.infrastructure.interceptors
 
-import com.example.backend.core.ThreadLocalStorage
+import com.example.backend.infrastructure.core.ThreadLocalStorage
 import org.springframework.web.servlet.HandlerInterceptor
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse

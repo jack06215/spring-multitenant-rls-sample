@@ -1,4 +1,4 @@
-package com.example.backend.core
+package com.example.backend.infrastructure.core
 
 class ThreadLocalStorage {
     companion object {

@@ -1,6 +1,6 @@
-package com.example.backend.datasource
+package com.example.backend.infrastructure.datasource
 
-import com.example.backend.core.ThreadLocalStorage
+import com.example.backend.infrastructure.core.ThreadLocalStorage
 import com.zaxxer.hikari.HikariDataSource
 import java.sql.Connection
 import java.sql.SQLException

@@ -1,9 +1,9 @@
 package com.example.backend.web.controller
 
-import com.example.backend.core.ThreadLocalStorage
 import com.example.backend.domain.customer.Customer
-import com.example.backend.infrastructure.customer.Converters
-import com.example.backend.repositories.ICustomerRepository
+import com.example.backend.domain.customer.ICustomerRepository
+import com.example.backend.infrastructure.core.ThreadLocalStorage
+import com.example.backend.infrastructure.database.customer.Converters
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
-import com.example.backend.infrastructure.customer.Customer as CustomerRecord
+import com.example.backend.infrastructure.database.customer.Customer as CustomerRecord
 
 @RestController
 @CrossOrigin

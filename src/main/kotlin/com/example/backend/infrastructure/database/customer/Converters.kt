@@ -1,7 +1,7 @@
-package com.example.backend.infrastructure.customer
+package com.example.backend.infrastructure.database.customer
 
 import com.example.backend.domain.customer.Customer
-import com.example.backend.infrastructure.customer.Customer as CustomerRecord
+import com.example.backend.infrastructure.database.customer.Customer as CustomerRecord
 
 class Converters {
     companion object {
@@ -14,7 +14,7 @@ class Converters {
         }
 
         fun convert(customers: Iterable<CustomerRecord>): List<Customer> {
-            return customers.map(Converters::convert)
+            return customers.map(Companion::convert)
         }
     }
 }
