@@ -1,4 +1,4 @@
-package com.example.backend.model
+package com.example.backend.infrastructure.tenant
 
 import javax.persistence.Column
 import javax.persistence.Embeddable

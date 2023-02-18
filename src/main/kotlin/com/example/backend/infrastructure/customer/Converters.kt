@@ -1,7 +1,7 @@
 package com.example.backend.infrastructure.customer
 
 import com.example.backend.domain.customer.Customer
-import com.example.backend.model.Customer as CustomerRecord
+import com.example.backend.infrastructure.customer.Customer as CustomerRecord
 
 class Converters {
     companion object {
